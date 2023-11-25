@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Dump it</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+</head>
+<body>
+    <div id="canvas-container">
+        <div class="inputBox" id="dump-box">
+            <div class="div">
+                    <p class="text-wrapper">Things come and go, don’t let the bad stay, dump it and turn it into a wish.</p>
+                    <p class="p">Type in whatever you want to throw away from yourself and hit enter.</p>
+                    <form id="textForm">
+                        <input type="text" class="type-here" id="textInput" placeholder="Type here and hit Enter...">
+                    </form>
+            </div>
+        </div>
+
+        <div class="inputBox" id="wish-box">
+            <div class="div">
+                    <p class="text-wrapper">Now, make your wish and turn it into a star.</p>
+                    <p class="p">Don't worry, your wish is encrypted.</p>
+                    <form id="textForm2">
+                        <input type="text" class="type-here" id="textInput" placeholder="Type here and hit Enter...">
+                    </form>
+            </div>
+        </div>
+
+        <div class="inputBox" id="theEnd">
+            <div class="end">
+                    <p class="text-wrapper">Things come and go, don't let the bad stay, dump it and turn it into a wish</p>
+                    <p class="p">- "Can we pretend that airplane in the night sky like shooting star... I could really make a wish right now... "</p>
+                    <button id="refreshButton" onclick="window.location.reload();">Restart</button>
+            </div>
+        </div>
+    </div>  
+    
+    <!-- p5.js code -->
+    <script src="sketch.js"></script>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="/[EDI] Computer Codes for Art/finalProject/bgm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Click on the screen will play the music -->
+    <script>
+        let musicPlayed = false;
+
+        document.body.addEventListener('click', function() {
+            if (!musicPlayed) {
+                document.getElementById('backgroundMusic').play();
+                isMusicPlayed = true;
+            }
+        });
+    </script>
+
+</body>
+</html>
